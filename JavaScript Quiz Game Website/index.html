@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced JavaScript Quiz Game</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+  <div id="quiz-container" class="w-full max-w-2xl p-6 bg-gray-800 rounded-lg shadow-lg">
+    <div id="start-screen" class="text-center">
+      <h1 class="text-4xl font-bold mb-4">JavaScript Quiz Game</h1>
+      <p class="mb-6">Test your knowledge with dynamic trivia questions!</p>
+      <button id="start-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Start Quiz</button>
+    </div>
+    <div id="quiz-screen" class="hidden">
+      <div class="flex justify-between mb-4">
+        <div>Question <span id="question-number">1</span>/<span id="total-questions">10</span></div>
+        <div>Score: <span id="score">0</span></div>
+        <div>Time: <span id="timer">15</span>s</div>
+      </div>
+      <div id="progress-bar" class="w-full bg-gray-600 h-2 rounded">
+        <div id="progress" class="bg-blue-600 h-full rounded"></div>
+      </div>
+      <h2 id="question" class="text-xl my-4"></h2>
+      <div id="options" class="grid grid-cols-1 gap-4"></div>
+      <button id="next-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-6 hidden">Next Question</button>
+    </div>
+    <div id="result-screen" class="hidden text-center">
+      <h2 class="text-3xl font-bold mb-4">Quiz Completed!</h2>
+      <p>Your Score: <span id="final-score"></span></p>
+      <p id="result-message" class="mb-4"></p>
+      <div class="flex justify-center gap-4">
+        <button id="restart-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Restart Quiz</button>
+        <button id="leaderboard-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">View Leaderboard</button>
+      </div>
+    </div>
+    <div id="leaderboard-screen" class="hidden text-center">
+      <h2 class="text-3xl font-bold mb-4">Leaderboard</h2>
+      <ul id="leaderboard-list" class="mb-6"></ul>
+      <button id="back-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Back to Home</button>
+    </div>
+  </div>
+  <audio id="correct-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+  <audio id="incorrect-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+  <script src="utils.js"></script>
+  <script src="leaderboard.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>

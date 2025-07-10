@@ -1,0 +1,36 @@
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+#quiz-container {
+  transition: all 0.3s ease-in-out;
+}
+
+.option {
+  background-color: #4a5568;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.option:hover {
+  background-color: #2d3748;
+}
+
+.option.correct {
+  background-color: #48bb78;
+}
+
+.option.incorrect {
+  background-color: #f56565;
+}
+
+#progress-bar {
+  overflow: hidden;
+}
+
+#progress {
+  width: 0%;
+  transition: width 0.1s linear;
+}
